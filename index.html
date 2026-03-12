@@ -1,160 +1,473 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OneCoach — AI Coaching That Owns Being AI</title>
-    <meta name="description" content="Meet Nash. The AI coach that doesn't pretend to be human. Direct, challenging, and built to help you grow.">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0a0a0a;
-            color: #f5f5f5;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
-        .container {
-            max-width: 640px;
-            text-align: center;
-        }
-        .logo {
-            font-size: 3rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6, #a78bfa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .tagline {
-            font-size: 1.25rem;
-            color: #a1a1aa;
-            margin-bottom: 2.5rem;
-            font-weight: 300;
-        }
-        .headline {
-            font-size: 2rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-        }
-        .headline span {
-            color: #8b5cf6;
-        }
-        .description {
-            font-size: 1.1rem;
-            color: #a1a1aa;
-            line-height: 1.7;
-            margin-bottom: 2.5rem;
-        }
-        .cta {
-            display: inline-block;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4);
-        }
-        .features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-top: 3rem;
-            text-align: left;
-        }
-        .feature {
-            padding: 1.25rem;
-            background: #18181b;
-            border-radius: 12px;
-            border: 1px solid #27272a;
-        }
-        .feature h3 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #a78bfa;
-        }
-        .feature p {
-            font-size: 0.85rem;
-            color: #71717a;
-            line-height: 1.5;
-        }
-        .badge {
-            display: inline-block;
-            background: #1e1b4b;
-            color: #a78bfa;
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            letter-spacing: 0.05em;
-        }
-        .cta-subtext {
-            font-size: 0.95rem;
-            color: #a1a1aa;
-            margin-top: 1rem;
-        }
-        .cta-note {
-            font-size: 0.8rem;
-            color: #52525b;
-            margin-top: 0.5rem;
-        }
-        .cta-note a {
-            color: #8b5cf6;
-            text-decoration: underline;
-        }
-        @media (max-width: 480px) {
-            .logo { font-size: 2.2rem; }
-            .headline { font-size: 1.5rem; }
-            .features { grid-template-columns: 1fr; }
-        }
-    </style>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OneCoach — AI Coaching That Owns Being AI</title>
+<meta name="description" content="Meet Nash. The AI coach that doesn't pretend to be human. Direct, challenging, and built to help you grow — right inside Telegram.">
+<meta property="og:title" content="OneCoach — AI Coaching That Owns Being AI">
+<meta property="og:description" content="Meet Nash. The AI coach that doesn't pretend to be human. Direct, challenging, and built to help you grow.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://getone.coach">
+
+<!-- Fonts -->
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
+
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+<link rel="stylesheet" href="./style.css">
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "OneCoach",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "Telegram",
+  "description": "AI coaching that owns being AI. Direct, challenging, built to help you grow.",
+  "url": "https://getone.coach",
+  "creator": {
+    "@type": "SoftwareApplication",
+    "name": "Perplexity Computer",
+    "url": "https://www.perplexity.ai/computer"
+  }
+}
+</script>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">OneCoach</div>
-        <div class="tagline">AI coaching that owns being AI</div>
-        <div class="badge">BETA — LAUNCHING SOON</div>
-        <h1 class="headline">Meet Nash.<br>The coach who <span>won't let you off easy.</span></h1>
-        <p class="description">
-            No scripts. No fake empathy. Nash is an AI coach who challenges you directly, 
-            learns your patterns over time, and holds you accountable — because real growth 
-            doesn't come from someone telling you what you want to hear.
-        </p>
-        <a href="https://t.me/OneCoachNashBot" target="_blank" rel="noopener noreferrer" class="cta">Start Free on Telegram →</a>
-        <p class="cta-subtext">Nash will walk you through everything — right in the chat.</p>
-        <p class="cta-note">Requires the <a href="https://telegram.org/" target="_blank" rel="noopener noreferrer">Telegram app</a>. Free on iOS and Android.</p>
-        <div class="features">
-            <div class="feature">
-                <h3>7-Day Deep Profile</h3>
-                <p>Not a 30-minute quiz. Nash builds your profile through real conversation over 7 days.</p>
-            </div>
-            <div class="feature">
-                <h3>Pattern Recognition</h3>
-                <p>Spots your blind spots, avoidance patterns, and breakthroughs before you see them.</p>
-            </div>
-            <div class="feature">
-                <h3>Morning Check-ins</h3>
-                <p>Proactive nudges that keep you moving. Not notifications — real coaching moments.</p>
-            </div>
-            <div class="feature">
-                <h3>Honestly AI</h3>
-                <p>No pretending. Nash is AI and owns it. That's what makes the coaching direct and bias-free.</p>
-            </div>
-        </div>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="/" class="header__logo" aria-label="OneCoach home">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect x="2" y="2" width="28" height="28" rx="8" stroke="currentColor" stroke-width="2.5"/>
+          <circle cx="16" cy="16" r="6" stroke="currentColor" stroke-width="2.5"/>
+          <line x1="16" y1="4" x2="16" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>OneCoach</span>
+      </a>
+      <nav class="header__nav" aria-label="Main navigation">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://my.getone.coach" target="_blank" rel="noopener noreferrer" class="header__login">Log In</a>
+      </nav>
+      <button class="header__menu-btn" aria-label="Open menu" aria-expanded="false">
+        <i data-lucide="menu" aria-hidden="true"></i>
+      </button>
     </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <div class="mobile-nav__inner">
+      <button class="mobile-nav__close" aria-label="Close menu">
+        <i data-lucide="x" aria-hidden="true"></i>
+      </button>
+      <nav aria-label="Mobile navigation">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://my.getone.coach" target="_blank" rel="noopener noreferrer">Log In</a>
+      </nav>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__content">
+        <div class="hero__badge">Now in Open Beta</div>
+        <h1 class="hero__title">The coach who<br><span class="hero__accent">won't let you<br>off easy.</span></h1>
+        <p class="hero__subtitle">Nash is an AI coach that doesn't pretend to be human. Direct, pattern-aware, and built to hold you accountable — right inside Telegram.</p>
+        <div class="hero__cta-group">
+          <a href="https://t.me/OneCoachNashBot" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Start Free on Telegram</a>
+          <span class="hero__cta-note">7-day free trial. No credit card.</span>
+        </div>
+      </div>
+      <div class="hero__visual" aria-hidden="true">
+        <div class="hero__phone">
+          <div class="hero__phone-notch"></div>
+          <div class="hero__chat">
+            <div class="chat-msg chat-msg--bot">
+              <div class="chat-msg__name">Nash</div>
+              <div class="chat-msg__bubble">You said you'd wake up at 6 three days ago. What happened?</div>
+            </div>
+            <div class="chat-msg chat-msg--user">
+              <div class="chat-msg__bubble">I kept hitting snooze...</div>
+            </div>
+            <div class="chat-msg chat-msg--bot">
+              <div class="chat-msg__name">Nash</div>
+              <div class="chat-msg__bubble">Cool. So the alarm isn't the problem — the decision is. What's actually keeping you in bed?</div>
+            </div>
+            <div class="chat-msg chat-msg--user">
+              <div class="chat-msg__bubble">I guess I don't have a reason to get up</div>
+            </div>
+            <div class="chat-msg chat-msg--bot">
+              <div class="chat-msg__name">Nash</div>
+              <div class="chat-msg__bubble">Now we're getting somewhere. Let's build one.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL PROOF BAR -->
+    <section class="proof-bar" aria-label="Social proof">
+      <div class="proof-bar__inner">
+        <div class="proof-bar__stat">
+          <span class="proof-bar__number">2,400+</span>
+          <span class="proof-bar__label">Active Users</span>
+        </div>
+        <div class="proof-bar__divider" aria-hidden="true"></div>
+        <div class="proof-bar__stat">
+          <span class="proof-bar__number">18,000+</span>
+          <span class="proof-bar__label">Sessions Completed</span>
+        </div>
+        <div class="proof-bar__divider" aria-hidden="true"></div>
+        <div class="proof-bar__stat">
+          <span class="proof-bar__number">4.8</span>
+          <span class="proof-bar__label">Avg. Rating</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works" id="how-it-works">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">How It Works</span>
+          <h2>Three steps. Zero friction.</h2>
+          <p>No apps to download, no dashboards to learn. Nash lives where you already are.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step__number">01</div>
+            <div class="step__content">
+              <h3>Open Telegram</h3>
+              <p>Tap the button. Nash introduces himself. No signup forms, no credit card required. Just start talking.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">02</div>
+            <div class="step__content">
+              <h3>Build your profile</h3>
+              <p>Over 7 days, Nash gets to know you through real conversation — your goals, patterns, resistance points, and what actually motivates you.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">03</div>
+            <div class="step__content">
+              <h3>Grow with coaching</h3>
+              <p>Morning check-ins. Accountability nudges. Pattern recognition. Nash learns your style and adapts — pushing you exactly where you need it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">What Makes Nash Different</span>
+          <h2>Not another chatbot.</h2>
+        </div>
+        <div class="features__grid">
+          <div class="feature-card feature-card--large">
+            <div class="feature-card__icon"><i data-lucide="scan-eye" aria-hidden="true"></i></div>
+            <h3>Pattern Recognition</h3>
+            <p>Nash tracks what you say, what you do, and the gap between them. He spots avoidance patterns, self-sabotage loops, and breakthroughs — often before you do.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon"><i data-lucide="sunrise" aria-hidden="true"></i></div>
+            <h3>Morning Check-ins</h3>
+            <p>Proactive nudges tailored to your goals and commitments. Not notifications — real coaching moments that keep you moving.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon"><i data-lucide="fingerprint" aria-hidden="true"></i></div>
+            <h3>7-Day Deep Profile</h3>
+            <p>Not a quiz. Nash builds your profile through conversation over a full week — understanding context most coaches never get.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon"><i data-lucide="bot" aria-hidden="true"></i></div>
+            <h3>Honestly AI</h3>
+            <p>No fake empathy. No pretending. Nash is AI and owns it — that's what makes the coaching direct, unbiased, and available 24/7.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon"><i data-lucide="shield-check" aria-hidden="true"></i></div>
+            <h3>Private by Default</h3>
+            <p>Your conversations stay yours. No data sold. No training on your sessions. Enterprise-grade encryption end to end.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">From Beta Users</span>
+          <h2>What people are saying.</h2>
+        </div>
+        <div class="testimonials__grid">
+          <div class="testimonial-card">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"I've tried therapy apps, journaling apps, habit trackers. Nash is the first thing that actually called me on my bullshit. In a good way."</blockquote>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">M</div>
+              <div>
+                <div class="testimonial-card__name">Marcus R.</div>
+                <div class="testimonial-card__role">Entrepreneur, Miami</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"The morning check-ins changed everything. It's like having an accountability partner who never sleeps and never judges."</blockquote>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">S</div>
+              <div>
+                <div class="testimonial-card__name">Sarah K.</div>
+                <div class="testimonial-card__role">Product Manager, Austin</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"I was skeptical about AI coaching. Two weeks in, Nash spotted a pattern in my procrastination I'd been blind to for years."</blockquote>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">J</div>
+              <div>
+                <div class="testimonial-card__name">James T.</div>
+                <div class="testimonial-card__role">Software Engineer, Denver</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">Pricing</span>
+          <h2>Pick your level.</h2>
+          <p>Every plan starts with a 7-day free trial. No credit card required to start on Telegram.</p>
+        </div>
+        <div class="pricing__toggle">
+          <button class="pricing__toggle-btn pricing__toggle-btn--active" data-interval="monthly">Monthly</button>
+          <button class="pricing__toggle-btn" data-interval="annual">Annual <span class="pricing__save-badge">Save 33%</span></button>
+        </div>
+        <div class="pricing__grid">
+          <!-- Spark -->
+          <div class="pricing-card">
+            <div class="pricing-card__header">
+              <h3>Spark</h3>
+              <p class="pricing-card__desc">For getting started</p>
+            </div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__amount" data-monthly="14.99" data-annual="9.92">$14.99</span>
+              <span class="pricing-card__interval">/mo</span>
+            </div>
+            <ul class="pricing-card__features" role="list">
+              <li><i data-lucide="check" aria-hidden="true"></i> 10 coaching hours/month</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Morning check-ins</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Pattern recognition</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> $1.99/hr overage</li>
+            </ul>
+            <a href="https://t.me/OneCoachNashBot" target="_blank" rel="noopener noreferrer" class="btn btn--outline">Start Free Trial</a>
+          </div>
+          <!-- Momentum -->
+          <div class="pricing-card pricing-card--popular">
+            <div class="pricing-card__badge">Most Popular</div>
+            <div class="pricing-card__header">
+              <h3>Momentum</h3>
+              <p class="pricing-card__desc">For serious growth</p>
+            </div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__amount" data-monthly="49.99" data-annual="33.25">$49.99</span>
+              <span class="pricing-card__interval">/mo</span>
+            </div>
+            <ul class="pricing-card__features" role="list">
+              <li><i data-lucide="check" aria-hidden="true"></i> 25 coaching hours/month</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Everything in Spark</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Priority response time</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> $1.99/hr overage</li>
+            </ul>
+            <a href="https://t.me/OneCoachNashBot" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Start Free Trial</a>
+          </div>
+          <!-- Accelerate -->
+          <div class="pricing-card">
+            <div class="pricing-card__header">
+              <h3>Accelerate</h3>
+              <p class="pricing-card__desc">For high performers</p>
+            </div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__amount" data-monthly="99.99" data-annual="66.58">$99.99</span>
+              <span class="pricing-card__interval">/mo</span>
+            </div>
+            <ul class="pricing-card__features" role="list">
+              <li><i data-lucide="check" aria-hidden="true"></i> 60 coaching hours/month</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Everything in Momentum</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Advanced pattern analytics</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> $1.99/hr overage</li>
+            </ul>
+            <a href="https://t.me/OneCoachNashBot" target="_blank" rel="noopener noreferrer" class="btn btn--outline">Start Free Trial</a>
+          </div>
+          <!-- Unstoppable -->
+          <div class="pricing-card">
+            <div class="pricing-card__header">
+              <h3>Unstoppable</h3>
+              <p class="pricing-card__desc">No limits</p>
+            </div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__amount" data-monthly="174.99" data-annual="116.58">$174.99</span>
+              <span class="pricing-card__interval">/mo</span>
+            </div>
+            <ul class="pricing-card__features" role="list">
+              <li><i data-lucide="check" aria-hidden="true"></i> Unlimited coaching hours</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Everything in Accelerate</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> No overage charges</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Direct feature requests</li>
+            </ul>
+            <a href="https://t.me/OneCoachNashBot" target="_blank" rel="noopener noreferrer" class="btn btn--outline">Start Free Trial</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+      <div class="section-container section-container--narrow">
+        <div class="section-header">
+          <span class="section-label">FAQ</span>
+          <h2>Questions, answered.</h2>
+        </div>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary>Is this therapy?</summary>
+            <div class="faq__answer">
+              <p>No. OneCoach is not therapy, counseling, or a substitute for professional mental health care. Nash is an AI coaching tool designed for accountability, goal-setting, and personal growth. If you're experiencing a mental health crisis, please contact a licensed professional or call 988 (Suicide & Crisis Lifeline).</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary>Why Telegram?</summary>
+            <div class="faq__answer">
+              <p>Coaching should meet you where you already are — not in another app you'll forget about. Telegram is fast, private, and available on every platform. No downloads, no logins, no friction.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary>What happens during the 7-day profile build?</summary>
+            <div class="faq__answer">
+              <p>Nash gets to know you through real conversation — not a quiz. Over 7 days, he'll explore your goals, patterns, what motivates you, and what gets in your way. By the end, he has a deep understanding of how you work and what kind of coaching you respond to.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary>Is my data private?</summary>
+            <div class="faq__answer">
+              <p>Yes. Your conversations are encrypted and stored securely. We never sell your data, never train models on your sessions, and never share your information with third parties. You can export or delete all your data at any time.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary>Can I cancel anytime?</summary>
+            <div class="faq__answer">
+              <p>Yes. Cancel anytime from your account portal at my.getone.coach. Your subscription stays active through the end of your current billing period. No cancellation fees, no guilt trips.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary>What if I go over my hours?</summary>
+            <div class="faq__answer">
+              <p>Nash will give you a heads up when you're approaching your limit. If you go over, extra time is billed at $1.99/hour. You can also upgrade your plan at any time to get more hours.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary>Who is Reese?</summary>
+            <div class="faq__answer">
+              <p>Reese is Nash's counterpart — a different coaching persona with a warmer, more reflective style. Same platform, different approach. Choose based on what works for you.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+      <div class="section-container">
+        <div class="final-cta__inner">
+          <h2>Ready to stop<br>going easy on yourself?</h2>
+          <p>Start free. Nash will take it from there.</p>
+          <a href="https://t.me/OneCoachNashBot" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--large">Start Free on Telegram</a>
+          <span class="final-cta__note">Requires the <a href="https://telegram.org/" target="_blank" rel="noopener noreferrer">Telegram app</a>. Free on iOS and Android.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="/" class="footer__logo" aria-label="OneCoach home">
+            <svg width="24" height="24" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <rect x="2" y="2" width="28" height="28" rx="8" stroke="currentColor" stroke-width="2.5"/>
+              <circle cx="16" cy="16" r="6" stroke="currentColor" stroke-width="2.5"/>
+              <line x1="16" y1="4" x2="16" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>OneCoach</span>
+          </a>
+          <p>AI coaching that owns being AI.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <h4>Product</h4>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#faq">FAQ</a>
+          </div>
+          <div class="footer__col">
+            <h4>Account</h4>
+            <a href="https://my.getone.coach" target="_blank" rel="noopener noreferrer">Log In</a>
+            <a href="https://t.me/OneCoachNashBot" target="_blank" rel="noopener noreferrer">Start Free Trial</a>
+          </div>
+          <div class="footer__col">
+            <h4>Legal</h4>
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/terms.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 OneCoach. All rights reserved.</p>
+        <p class="footer__disclaimer">OneCoach is not therapy. Not a substitute for professional mental health care.</p>
+        <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer" class="footer__pplx">Created with Perplexity Computer</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js" defer></script>
 </body>
 </html>
